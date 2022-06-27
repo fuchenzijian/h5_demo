@@ -1,0 +1,24 @@
+body,h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}
+
+.cl-grey{
+    color: #ccc;
+}
+
+.cl-white{
+    color: white;
+}
+
+.ft-14{
+    font-size: 1.4rem;
+}
+
+.ft-12{
+    font-size: 1.2rem;
+}
+
+.mt-18{
+    margin-top: 1.8rem;
+}
