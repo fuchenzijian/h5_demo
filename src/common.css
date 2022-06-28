@@ -11,6 +11,10 @@ body,h1,h2,h3,h4,h5,h6,p{
     color: white;
 }
 
+.ft-16{
+    font-size: 1.6rem;
+}
+
 .ft-14{
     font-size: 1.4rem;
 }
@@ -21,4 +25,32 @@ body,h1,h2,h3,h4,h5,h6,p{
 
 .mt-18{
     margin-top: 1.8rem;
+}
+
+.mt-20{
+    margin-top: 2rem;
+}
+
+.icon{
+    width: 2.4rem;
+}
+
+.bg-blue{
+    background: #7367fb;
+}
+
+.bg-white{
+    background: #fff;
+}
+
+.ft-16{
+    font-size: 1.6rem;
+}
+
+.icon-24{
+    width: 2.4rem;
+}
+
+.ml-10{
+    margin-left: 1rem;
 }

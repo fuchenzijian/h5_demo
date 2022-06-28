@@ -1,54 +1,66 @@
 <template>
     <div class="home">
-        <!-- 背景色块 -->
-        <div class="bg">
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-        </div>
+
         <!-- 头部 -->
         <div class="header">
-            <img src="../../assets/imgs/icon_menu.png">
+            <div class="header-left">
+                <img class="icon" src="../../assets/imgs/icon_left_arrow.png">
+            </div>
+            <h1 class="ft-14">Local screencast</h1>
+            <div></div>
         </div>
 
-        <!-- 广告 -->
+        <!-- 搜索框 -->
+        <div class="search">
+            <input type="text" placeholder="search">
+            <div class="search-icon">
+                <img class="icon" src="../../assets/imgs/icon_search.png">
+            </div>
+        </div>
+
+        <!-- banner图 -->
         <div class="banner">
-            <p class="ft-14 cl-white">Mirroring Cast screen</p>
-            <p class="ft-12 cl-grey">Real-time screen sharing</p>
-            <div class="img-wrap">
-                <img src="../../assets/imgs/人物-电视.png" alt="">
+            <div class="banner-l">
+                <img src="../../assets/imgs/waaw.png" alt="">
+            </div>
+            <div class="banner-r">
+                <p class="ft-20">Mirror guide</p>
+                <p class="ft-14">common problem</p>
             </div>
         </div>
 
-        <!-- 功能选项 -->
-        <div class="option-wrap">
-            <div class="choose">
-                <div class="choose-l">
-                    <p class="ft-14 cl-white">Please choose</p>
-                    <p class="ft-12 cl-grey">Choose a screencast scence</p>
-                </div>
-                <div class="choose-r">
-                    <img src="../../assets/imgs/微信.png">
+        <!-- scroll图 -->
+        <div class="scroll">
+            <div class="scroll-wrap">
+                <div class="item bg-blue" v-for="item in 5" :key="item">
+                    <div class="icon-wrap">
+                        <img class="icon-32" src="../../assets/imgs/icon_file.png" alt="">
+                    </div>
+                    <p class="ft-16 cl-white">Picture</p>
+                    <p class="ft-16 cl-grey">Local screencast</p>
                 </div>
             </div>
-            <div class="option">
-                <div class="option-l">
-                    <img src="../../assets/imgs/icon_1.png">
+        </div>
+
+        <!-- 底部 -->
+        <div class="btm">
+            <div class="btm-t">
+                <div class="left">
+                    <img  src="../../assets/imgs/icon_1.png" alt="">
                 </div>
-                <div class="option-r">
-                    <p class="ft-14 cl-grey">Screen mirroring</p>
+                <div class="right">
+                    <p class="ft-16">Screen mirroring</p>
                     <p class="ft-14 cl-grey">Mobile screen sharing to TV</p>
                 </div>
             </div>
-            <div class="option mt-20">
-                <div class="option-l">
-                    <img src="../../assets/imgs/icon_1.png">
+            <div class="btm-b">
+                <div class="btn">
+                    <img class="icon-24" src="../../assets/imgs/icon_stop.png">
+                    <p class="ft-16 ml-10">Time Out</p>
                 </div>
-                <div class="option-r">
-                    <p class="ft-14 cl-grey">Screen mirroring</p>
-                    <p class="ft-14 cl-grey">Mobile screen sharing to TV</p>
+                <div class="btn">
+                    <img class="icon-24" src="../../assets/imgs/icon_end.png">
+                    <p class="ft-16 ml-10">End</p>
                 </div>
             </div>
         </div>
@@ -56,106 +68,169 @@
 </template>
 
 <script>
-export default {
+export default{
     data() {
-        return {
-
-        };
+       return{}; 
     },
 }
 </script>
+
 <style scoped>
-.home {
-    height: 100vh;
-}
-
-.bg {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    position: absolute;
-    z-index: -1;
-    width: 100vw;
+.home{
+    padding:2.5rem;
+    background: #d8cbf7;
     border-radius: 2rem;
-    overflow: hidden;
 }
-
-.bg .item {
-    height: 100vh;
-}
-
-.item:nth-child(even) {
-    background: #7266fa;
-}
-
-.item:nth-child(2n-1) {
-    background: #7f70fe;
-}
-
-.header {
-    padding: 1.4rem 2.2rem;
-}
-
-.banner p {
-    padding: 0.4rem 3.5rem;
-}
-
-.banner .img-wrap {
-    padding: 0 5rem;
-}
-
-.banner .img-wrap>img {
-    position: relative;
-    top: -2rem;
-    height: 28.8rem;
-    width: 100%;
-}
-
-.option-wrap {
-    padding:1.8rem 2.4rem;
-    box-sizing: border-box;
-    background: #8175fb;
-}
-
-.option-wrap{
-    border-radius: 2rem;
-    overflow: hidden;
-}
-
-.option-wrap .choose {
-    padding: 1.6rem;
+.header{
+    padding: 1.5rem 0;
     display: grid;
-    grid-template-columns: auto 2.4rem;
+    grid-template-columns: 1fr 6fr 1fr;
 }
-
-.choose .choose-l>p {
-    padding: 0.4rem 0;
+.header h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.choose .choose-r {
+.header-left{
     display: flex;
     align-items: center;
 }
 
-.option{
-    padding: 4rem 2rem;
-    border-radius: 2rem;
-    background: #fff;
+.search{
+    margin: 0.8rem 0;
     display: grid;
-    grid-template-columns: 5.6rem auto;
+    border-radius: 2rem;
+    overflow: hidden;
+    grid-template-columns: 4fr 1fr;
+    font-size: 1.4rem;
 }
-.option-l{
+
+.search input{
+    outline: none;
+    border: none;
+    font-size: 1.6rem;
+    text-indent: 1em;
+}
+.search-icon{
+    padding: 1.6rem 2.5rem;
+    background: #fff;
+}
+
+.banner{
+    display: grid;
+    grid-template-columns: 13.2rem auto;
+    border-radius: 8rem;
+    padding: 2.6rem 0;
+    margin: 3.6rem 0;
+    background: #eceaff;
+}
+
+.banner-l{
+    position: relative;
+}
+.banner-l img{
+    width: 11.2rem;
+    position: absolute;
+    top: -4.2rem;
+    left: 1.5rem;
+}
+.banner-r p{
+    padding: 0.4rem 0;
+}
+.ft-20{
+    font-size: 2rem;
+}
+.pd-25{
+    padding: 0 2.5rem;
+}
+
+.item{
+    padding: 2.6rem 1.4rem;
+    width: 13.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    margin-right: 1.6rem;
+}
+.item .icon-wrap{
+    padding: 1.6rem;
+    background: #ccc;
+    border-radius: 2rem;
+}
+
+.item p{
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    padding: 0.5rem 0;
+}
+
+.icon-32{
+    width: 3.2rem;
+}
+.scroll{
+    overflow-x: auto;
+}
+
+.scroll-wrap{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+::-webkit-scrollbar{
+    display:none;
+}
+.btm{
+    margin-top:3.6rem;
+    background: #e5e2ff;
+    border-radius: 2rem;
+}
+.btm-t{
+    padding: 3.8rem 2rem;
+    background: #fff;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: 5.5rem auto;
+}
+.btm-t .left{
+    width: 5.5rem;
+    height: 5.5rem;
     border-radius: 50%;
     overflow: hidden;
 }
 
-.option-r{
-    box-sizing: border-box;
-    padding-left: 1.5rem;
+.btm-t .left img{
+    width: 100%;
+}
+.btm-t .right{
+    padding: 0 1.4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
-.mt-20{
-    margin-top: 2rem;
+.btm-t .right p{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.btm-b{
+    padding: 2.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.btm-b .btn{
+    padding: 1.6rem 3rem;
+    display: flex;
+    background: #fff;
+    border-radius: 2rem;
 }
 </style>
